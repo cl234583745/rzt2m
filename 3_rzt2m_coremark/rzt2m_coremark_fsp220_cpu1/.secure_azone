@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<azone>
+    <rzone name="R9A07G075M24GBG.rzone"/>
+    <partition>
+        <peripheral name="GPT0" group="GPT" security=""/>
+        <peripheral name="SCI0" group="SCI" security=""/>
+        <peripheral name="ICU">
+            <slot name="IRQ1" secure="false"/>
+            <slot name="IRQ122" secure="false"/>
+            <slot name="IRQ288" secure="false"/>
+            <slot name="IRQ289" secure="false"/>
+            <slot name="IRQ290" secure="false"/>
+            <slot name="IRQ291" secure="false"/>
+            <slot name="IRQ0" secure="false"/>
+            <slot name="IRQ59" secure="false"/>
+        </peripheral>
+        <memory parent="ATCM" name="ATCM_CR52_0" size="0x12410" offset="0x0" security="" Pname="CR52_0"/>
+        <memory parent="BTCM" name="BTCM_CR52_0" size="0x9D18" offset="0x0" security="" Pname="CR52_0"/>
+        <memory parent="SYSTEM_RAM" name="SYSTEM_RAM_CR52_0" size="0x0" offset="0x0" security="" Pname="CR52_0"/>
+        <memory parent="xSPI0_CS0_SPACE" name="xSPI0_CS0_SPACE_CR52_0" size="0xBDF4" offset="0x0" security="" Pname="CR52_0"/>
+        <peripheral name="CMTW0" group="CMTW" security=""/>
+    </partition>
+    <zones>
+        <zone name="CR52_0" Pname="CR52_0" security="">
+            <assign memory="ATCM_CR52_0"/>
+            <assign memory="BTCM_CR52_0"/>
+            <assign memory="SYSTEM_RAM_CR52_0"/>
+            <assign memory="xSPI0_CS0_SPACE_CR52_0"/>
+            <assign group="GPT" peripheral="GPT0"/>
+            <assign group="SCI" peripheral="SCI0"/>
+            <assign peripheral="ICU.IRQ1"/>
+            <assign peripheral="ICU.IRQ122"/>
+            <assign peripheral="ICU.IRQ288"/>
+            <assign peripheral="ICU.IRQ289"/>
+            <assign peripheral="ICU.IRQ290"/>
+            <assign peripheral="ICU.IRQ291"/>
+        </zone>
+    </zones>
+</azone>
